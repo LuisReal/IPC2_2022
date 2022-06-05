@@ -1,4 +1,4 @@
-class Nodo:
+class NodoCarritos:
     def __init__(self, valor = None, siguiente = None):
         self.valor = valor
         self.siguiente = siguiente
@@ -6,8 +6,8 @@ class Nodo:
 
 class Carritos:
     def __init__(self):
-        self.raiz = Nodo()
-        self.ultimo = Nodo()
+        self.raiz = NodoCarritos()
+        self.ultimo = NodoCarritos()
         
     def apilar(self, nuevoNodo):
         
@@ -25,7 +25,7 @@ class Carritos:
     def desapilar(self, carrito = None):
         if carrito is None:
             if self.raiz.siguiente is None:
-                self.raiz = Nodo()
+                self.raiz = NodoCarritos()
             else:
                 nodoaux = self.raiz
                 nodoPenultimo = nodoaux
@@ -40,7 +40,7 @@ class Carritos:
                 if self.raiz.siguiente is not None:
                     self.raiz = self.raiz.siguiente
                 else:
-                    self.raiz = Nodo()
+                    self.raiz = NodoCarritos()
             else:
                 nodoaux = self.raiz
                 nodoAnterior = nodoaux
