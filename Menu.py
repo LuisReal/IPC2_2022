@@ -1,5 +1,7 @@
 from Pila import Carritos, NodoCarritos
-from Lista import NodoLista, Lista
+from Lista import Lista, NodoLista
+from Cola import Cola , NodoCola
+
 class Menu:
     def __init__(self) -> None:
     
@@ -7,6 +9,7 @@ class Menu:
         self.id = 0
         self.lista = Lista()
         self.pila = Carritos()
+        self.cola = Cola()
 
         while opc<6:
 
@@ -45,32 +48,59 @@ class Menu:
 
             
             elif opc == 3:
-                cliente = int(input("Ingrese el id del cliente a seleccionar: "))
-
-                nodo = self.lista.buscarCliente(cliente)
-
-                print("Nombre: ", nodo.nombre, " Carrito: ", nodo.carrito)
+                
 
                 respuesta = 0
 
                 while respuesta <2:
-                    print("1. Pagar\n"
-                    , "2. Regresar")
-                    respuesta = int(input("Ingrese opcion: "))
+                    cliente = int(input("Ingrese el id del cliente a seleccionar: "))
+                    nodo = self.lista.buscarCliente(cliente)
                     
-                    if  respuesta == 1:
-                        print("pagando...")
+                    if nodo is None:
+                        print("           No existe el cliente seleccionado")
+                    else:
+                        print("id: ", nodo.id ,"Nombre: ", nodo.nombre, " Carrito: ", nodo.carrito)
+                        print("1. Pagar\n"
+                        , "2. Regresar")
+                        respuesta = int(input("Ingrese opcion: "))
+                        
+                        if  respuesta == 1:
+                            print("pagando...")
+                            
+                            self.cola.insertar(NodoCola(nodo))
+                            self.lista.eliminarCliente(cliente)
+                            
+                            print("Se elimino el cliente ", cliente, "\n")
+                            
+                            self.lista.recorrerLista()
 
-                        self.lista.eliminarCliente(cliente)
-                        print("Se elimino el cliente ", cliente, "\n")
-                        self.lista.recorrerLista()
-                    elif respuesta == 2:
-                        print("           regresando....")
-                    
+                            vacia = self.lista.lista_vacia()
+                            if vacia == None:
+                                break
+
+                        elif respuesta == 2:
+                            print("           regresando....")
+                        
             
             elif opc == 4:
                 print("Caja Registradora")
-            
+                self.cola.recorrerCola()
+                
+                opc = 0
+                while(opc < 2):
+                    print("1. Avanzar\n",
+                    "2. Regresar")
+
+                    opc = int(input("Ingrese opcion: "))
+
+                    if opc == 1:
+                        self.cola.desencolar()
+                        self.cola.recorrerCola()
+                    else:
+                        print("Regresando")
+                   
+                        
+
             elif opc == 5:
                 print("Visualizar Datos")
             

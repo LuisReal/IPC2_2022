@@ -25,7 +25,7 @@ class Lista():
 
         cadena = ''
         while True:
-            if actual.nombre is not None:
+            if actual is not None:
                 cadena += "id: " + str(actual.id)  +" nombre: "+actual.nombre + " carrito: "+ str(actual.carrito)
                 if actual.siguiente is not None:
                     cadena += "\n"
@@ -33,6 +33,7 @@ class Lista():
                 else:
                     break
             else:
+                print("\n             No hay mas elementos en la lista")
                 break
         print(cadena)
     
@@ -46,6 +47,14 @@ class Lista():
                 return None
         
         return actual
+    
+    def lista_vacia(self):
+        
+        if self.raiz is None:
+            return None
+        else:
+            return "esta lleno"
+        
     
     def eliminarCliente(self, id):
         actual = self.raiz

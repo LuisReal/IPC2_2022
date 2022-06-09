@@ -70,7 +70,7 @@ class Carritos:
         
         cadena = ''
         while True:
-            if nodoAux.valor is not None:
+            if nodoAux is not None:
                 cadena += '(' + str(nodoAux.valor) + ') -> '
                 if nodoAux.siguiente is not None:
                     nodoAux = nodoAux.siguiente
