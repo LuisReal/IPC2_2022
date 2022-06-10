@@ -50,6 +50,6 @@ class Cola:
                 else:
                     break
             else:
-                print("                  No hay mas elementos en la cola de la Caja Registradora")
+                print("              No hay mas elementos en la cola de la Caja Registradora")
                 break
         print(cadena)
