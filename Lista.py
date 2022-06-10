@@ -33,18 +33,21 @@ class Lista():
                 else:
                     break
             else:
-                print("\n             No hay mas elementos en la lista")
+                print("\n             No hay mas elementos en la lista de clientes")
                 break
         print(cadena)
     
     def buscarCliente(self, id):
         actual = self.raiz
 
-        while actual.id != id:
-            if actual.siguiente is not None:
-                actual = actual.siguiente
-            else:
-                return None
+        if actual is None:
+            print("No existen mas Clientes")
+        else:
+            while actual.id != id:
+                if actual.siguiente is not None:
+                    actual = actual.siguiente
+                else:
+                    return None
         
         return actual
     

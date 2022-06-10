@@ -25,10 +25,18 @@ class Cola:
         aux = self.raiz
 
         if aux is not None:
+            self.setNodoEliminado(aux)
             self.raiz = aux.siguiente
             del aux
         else:
             print("               \nLa cola esta vacia")
+            self.nodo_eliminado = None
+
+    def setNodoEliminado(self, nodo):
+        self.nodo_eliminado = nodo
+
+    def getNodoEliminado(self):
+        return self.nodo_eliminado
     
     def recorrerCola(self):
         nodoAux = self.raiz
@@ -42,5 +50,6 @@ class Cola:
                 else:
                     break
             else:
+                print("                  No hay mas elementos en la cola de la Caja Registradora")
                 break
         print(cadena)

@@ -26,8 +26,11 @@ class Menu:
                 
                 carritos = int(input("Ingrese cantidad de carritos: "))
 
-                for a in range(carritos):
-                    self.pila.apilar(NodoCarritos(a+1))
+                if carritos <0 :
+                    print("\n                   No se aceptan numeros negativos")
+                else:
+                    for a in range(carritos):
+                        self.pila.apilar(NodoCarritos(a+1))
 
                 self.pila.recorrerPila()
         
@@ -35,12 +38,17 @@ class Menu:
                 nombre = input("Ingrese el nombre del cliente: ")
                 self.id = self.id+1
                 carrito = self.pila.getNodoPila()
+                
 
                 if carrito is None:
                     print("\n       No hay carritos disponibles, no puede ingresar mas clientes\n")
                 else:
 
                     print("el nodo desapilado(carrito) es: ", carrito)
+                    print("self.id: ", self.id)
+                    print("nombre: ", nombre)
+                    print("carrito: ", carrito)
+                    print()
                     self.lista.insertar(NodoLista(self.id, nombre, carrito))
                     self.pila.desapilar()
 
@@ -58,6 +66,7 @@ class Menu:
                     
                     if nodo is None:
                         print("           No existe el cliente seleccionado")
+                        break
                     else:
                         print("id: ", nodo.id ,"Nombre: ", nodo.nombre, " Carrito: ", nodo.carrito)
                         print("1. Pagar\n"
@@ -95,14 +104,26 @@ class Menu:
 
                     if opc == 1:
                         self.cola.desencolar()
+                        nodo_eliminado = self.cola.getNodoEliminado()
+                        #print("Carrito eliminado: ", nodo_eliminado.valor.carrito)
+                        if nodo_eliminado == None:
+                            print("No existen mas carritos en la cola de la caja")
+                        else:
+                            self.pila.apilar(NodoCarritos(nodo_eliminado.valor.carrito))
                         self.cola.recorrerCola()
+                        #self.pila.recorrerPila()
                     else:
                         print("Regresando")
                    
                         
 
             elif opc == 5:
-                print("Visualizar Datos")
+                print("                 Pila de Carritos\n")
+                self.pila.recorrerPila()
+                print("\n               Lista de Clientes\n")
+                self.lista.recorrerLista()
+                print("\n               Cola Caja Registradora\n")
+                self.cola.recorrerCola()
             
             else:
                 print("saliendo.....")

@@ -34,6 +34,7 @@ class Carritos:
                     nodoPenultimo = nodoaux
                     nodoaux = nodoaux.siguiente
                 
+                self.ultimo = nodoPenultimo
                 nodoPenultimo.siguiente = None
         else:
             if self.raiz.valor is carrito:
