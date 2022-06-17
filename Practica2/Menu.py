@@ -19,7 +19,7 @@ class Menu:
 
             if opc == 1:
                 
-
+                print("hola")
                 #ruta = 'C:\Users\Darkun\Desktop\discos.xml'
                 self.archivo.lecturaDiscos('discos.xml')
                 self.archivo.lecturaEmpleados('empleados.xml')
