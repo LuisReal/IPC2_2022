@@ -84,7 +84,7 @@ class Disco:
 
     def graficar(self):
         grafo = 'digraph T{ \nnode[shape=box fontname="Arial" fillcolor="white" style=filled ]'
-        grafo += '\nroot[label = \"Catalog\", constraint=false, group=1];\n'
+        grafo += '\nroot[label = \"Catalog\", constraint=false, group="0"];\n'
         
         contador = 0
         for elemento in self.root.findall('./cd'):

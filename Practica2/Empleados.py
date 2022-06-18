@@ -89,7 +89,7 @@ class Empleado:
 
     def graficar(self):
         grafo = 'digraph T{ \nnode[shape=box fontname="Arial" fillcolor="white" style=filled ]'
-        grafo += '\nroot[label = \"Empresa\", constraint=false, group=1];\n'
+        grafo += '\nroot[label = \"Empresa\", constraint=false, group="0"];\n'
         
         contador = 0
         for departamento in self.root.findall('./departamento'):
@@ -115,11 +115,11 @@ class Empleado:
                 self.salario = self.salario.replace("\"", "\\\"")
                 
     
-                grafo += '\nempleado{}[label = \"empleado: {}\", group="{}"];\n'.format(self.id, self.id, self.id)
+                grafo += '\nempleado{}[label = \"empleado: {}\", group="{}"];\n'.format(self.id, self.id, contador)
                 #grafo += '\nid{}[label = \"id: {}\", group="{}"];\n'.format(self.id, self.id, self.id)
-                grafo += '\nnombre{}[label =\"nombre: {}\", group="{}"];\n'.format(self.id, self.nombre, self.id)
-                grafo += '\npuesto{}[label = \"puesto: {}\", group="{}"];\n'.format(self.id, self.puesto, self.id)
-                grafo += '\nsalario{}[label = \"salario: {}\", group="{}"];\n'.format(self.id, self.salario, self.id)
+                grafo += '\nnombre{}[label =\"nombre: {}\", group="{}"];\n'.format(self.id, self.nombre, contador)
+                grafo += '\npuesto{}[label = \"puesto: {}\", group="{}"];\n'.format(self.id, self.puesto, contador)
+                grafo += '\nsalario{}[label = \"salario: {}\", group="{}"];\n'.format(self.id, self.salario, contador)
 
                 grafo += '\ndepartamento{} -> empleado{};'.format(contador, self.id )
                 #grafo += '\nempleado{} -> id{};'.format(self.id, self.id )
