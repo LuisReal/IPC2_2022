@@ -19,7 +19,7 @@ class Menu:
 
             if opc == 1:
                 
-                print("hola")
+            
                 #ruta = 'C:\Users\Darkun\Desktop\discos.xml'
                 self.archivo.lecturaDiscos('discos.xml')
                 self.archivo.lecturaEmpleados('empleados.xml')
@@ -29,7 +29,7 @@ class Menu:
                 self.disco.arbol = self.archivo.doc_discos
 
                 print("\n                  Se cargaron los datos exitosamente\n")
-
+                
 
             elif opc == 2:
                 print("Gestion de empleados")
@@ -126,10 +126,10 @@ class Menu:
                     opcion = int(input("Ingrese la opcion: "))
 
                     if opcion == 1:
-                        print("Reporte de empleados")
+                        
                         self.empleado.graficar()
                     elif opcion == 2:
-                        print("Reporte de discos")
+                        self.disco.graficar()
                     else:
                         print("Regresando....")
             else:

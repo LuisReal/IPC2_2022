@@ -1,5 +1,6 @@
+from cgi import print_exception
 from this import s
-
+import os
 
 class Disco:
     def __init__(self, root = None, arbol = None):
@@ -80,3 +81,52 @@ class Disco:
 
     def generarArchivo(self):
         self.arbol.write('discos.xml')
+
+    def graficar(self):
+        grafo = 'digraph T{ \nnode[shape=box fontname="Arial" fillcolor="white" style=filled ]'
+        grafo += '\nroot[label = \"Catalog\", constraint=false, group=1];\n'
+        
+        contador = 0
+        for elemento in self.root.findall('./cd'):
+            contador += 1
+            titulo = elemento.find('title').text
+            artista = elemento.find('./artist').text 
+            pais = elemento.find('./country').text
+            compania = elemento.find('./company').text
+            precio = elemento.find('./price').text
+            anio = elemento.find('./year').text
+
+            titulo = titulo.replace("\"", "\\\"")
+            artista = artista.replace("\"", "\\\"")
+            pais = pais.replace("\"", "\\\"")
+            compania = compania.replace("\"", "\\\"")
+            precio = precio.replace("\"", "\\\"")
+            anio = anio.replace("\"", "\\\"")
+
+            grafo += '\ncd{}[label = \"cd \", group="{}"];\n'.format(contador, contador)
+            grafo += '\ntitle{}[label = \"title: {}\", group="{}"];\n'.format(contador, titulo, contador)
+            grafo += '\nartist{}[label = \"artist: {} \", group="{}"];\n'.format(contador, artista ,contador)
+            grafo += '\ncountry{}[label = \"country: {} \", group="{}"];\n'.format(contador, pais ,contador)
+            grafo += '\ncompany{}[label = \"company: {} \", group="{}"];\n'.format(contador, compania ,contador)
+            grafo += '\nprice{}[label = \"price: {} \", group="{}"];\n'.format(contador, precio ,contador)
+            grafo += '\nyear{}[label = \"year: {} \", group="{}"];\n'.format(contador, anio ,contador)
+
+            grafo += '\nroot -> cd{};'.format(contador)
+            grafo += '\ncd{} -> title{};'.format(contador, contador)
+            grafo += '\ntitle{} -> artist{};'.format(contador, contador)
+            grafo += '\ntitle{} -> country{};'.format(contador, contador)
+            grafo += '\ntitle{} -> company{};'.format(contador, contador)
+            grafo += '\ntitle{} -> price{};'.format(contador, contador)
+            grafo += '\ntitle{} -> year{};'.format(contador, contador)
+
+            
+
+
+        grafo += '}'
+
+        # ---- luego de crear el contenido del Dot, procedemos a colocarlo en un archivo
+        dot = "{}_dot.txt".format('discos')
+        with open(dot, 'w') as f:
+            f.write(grafo)
+        result = "{}.png".format('discos')
+        os.system("dot -Tpng " + dot + " -o " + result)

@@ -13,7 +13,7 @@
 	</departamento>
 	<departamento departamento="RRHH">
 		<empleado id="3">
-			<nombre>Marta Torres</nombre>
+			<nombre>&quot;Marta Torres&quot;</nombre>
 			<puesto>Reclutadora</puesto>
 			<salario>3000.00</salario>			
 		</empleado>

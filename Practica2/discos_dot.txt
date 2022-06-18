@@ -1,0 +1,67 @@
+digraph T{ 
+node[shape=box fontname="Arial" fillcolor="white" style=filled ]
+root[label = "Catalog", constraint=false, group=1];
+
+cd1[label = "cd ", group="1"];
+
+title1[label = "title: empire burlesque", group="1"];
+
+artist1[label = "artist: bob dylan ", group="1"];
+
+country1[label = "country: usa ", group="1"];
+
+company1[label = "company: columbia ", group="1"];
+
+price1[label = "price: 10.90 ", group="1"];
+
+year1[label = "year: 1985 ", group="1"];
+
+root -> cd1;
+cd1 -> title1;
+title1 -> artist1;
+title1 -> country1;
+title1 -> company1;
+title1 -> price1;
+title1 -> year1;
+cd2[label = "cd ", group="2"];
+
+title2[label = "title: greatest hits", group="2"];
+
+artist2[label = "artist: dolly parton ", group="2"];
+
+country2[label = "country: usa ", group="2"];
+
+company2[label = "company: rca ", group="2"];
+
+price2[label = "price: 9.90 ", group="2"];
+
+year2[label = "year: 1982 ", group="2"];
+
+root -> cd2;
+cd2 -> title2;
+title2 -> artist2;
+title2 -> country2;
+title2 -> company2;
+title2 -> price2;
+title2 -> year2;
+cd3[label = "cd ", group="3"];
+
+title3[label = "title: \"empire burlesque\"", group="3"];
+
+artist3[label = "artist: bee gees ", group="3"];
+
+country3[label = "country: uk ", group="3"];
+
+company3[label = "company: polydor ", group="3"];
+
+price3[label = "price: 10.90 ", group="3"];
+
+year3[label = "year: 1998 ", group="3"];
+
+root -> cd3;
+cd3 -> title3;
+title3 -> artist3;
+title3 -> country3;
+title3 -> company3;
+title3 -> price3;
+title3 -> year3;}

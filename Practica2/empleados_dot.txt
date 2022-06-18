@@ -5,9 +5,7 @@ root[label = "Empresa", constraint=false, group=1];
 departamento1[label = "departamento: Contabilidad ", group="1"];
 
 root -> departamento1;
-empleado1[label = "empleado", group="1"];
-
-id1[label = "id: 1", group="1"];
+empleado1[label = "empleado: 1", group="1"];
 
 nombre1[label ="nombre: Jose Ernesto", group="1"];
 
@@ -16,13 +14,10 @@ puesto1[label = "puesto: Gerente General", group="1"];
 salario1[label = "salario: 4000.00", group="1"];
 
 departamento1 -> empleado1;
-empleado1 -> id1;
 empleado1-> nombre1;
 empleado1-> puesto1;
 empleado1 -> salario1;
-empleado2[label = "empleado", group="2"];
-
-id2[label = "id: 2", group="2"];
+empleado2[label = "empleado: 2", group="2"];
 
 nombre2[label ="nombre: Daniel Perez", group="2"];
 
@@ -31,25 +26,21 @@ puesto2[label = "puesto: Contador", group="2"];
 salario2[label = "salario: 2000.00", group="2"];
 
 departamento1 -> empleado2;
-empleado2 -> id2;
 empleado2-> nombre2;
 empleado2-> puesto2;
 empleado2 -> salario2;
 departamento2[label = "departamento: RRHH ", group="2"];
 
 root -> departamento2;
-empleado3[label = "empleado", group="3"];
+empleado3[label = "empleado: 3", group="3"];
 
-id3[label = "id: 3", group="3"];
-
-nombre3[label ="nombre: Marta Torres", group="3"];
+nombre3[label ="nombre: \"Marta Torres\"", group="3"];
 
 puesto3[label = "puesto: Reclutadora", group="3"];
 
 salario3[label = "salario: 3000.00", group="3"];
 
 departamento2 -> empleado3;
-empleado3 -> id3;
 empleado3-> nombre3;
 empleado3-> puesto3;
 empleado3 -> salario3;}

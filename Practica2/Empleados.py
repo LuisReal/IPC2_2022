@@ -108,14 +108,21 @@ class Empleado:
                 self.salario = empleado.find('./salario').text
                 
                 
-                grafo += '\nempleado{}[label = \"empleado\", group="{}"];\n'.format(self.id, self.id)
-                grafo += '\nid{}[label = \"id: {}\", group="{}"];\n'.format(self.id, self.id, self.id)
+                #print("el nombre es: ", self.nombre)
+                self.id = self.id.replace("\"", "\\\"")
+                self.nombre = self.nombre.replace("\"", "\\\"")
+                self.puesto = self.puesto.replace("\"", "\\\"")
+                self.salario = self.salario.replace("\"", "\\\"")
+                
+    
+                grafo += '\nempleado{}[label = \"empleado: {}\", group="{}"];\n'.format(self.id, self.id, self.id)
+                #grafo += '\nid{}[label = \"id: {}\", group="{}"];\n'.format(self.id, self.id, self.id)
                 grafo += '\nnombre{}[label =\"nombre: {}\", group="{}"];\n'.format(self.id, self.nombre, self.id)
                 grafo += '\npuesto{}[label = \"puesto: {}\", group="{}"];\n'.format(self.id, self.puesto, self.id)
                 grafo += '\nsalario{}[label = \"salario: {}\", group="{}"];\n'.format(self.id, self.salario, self.id)
 
                 grafo += '\ndepartamento{} -> empleado{};'.format(contador, self.id )
-                grafo += '\nempleado{} -> id{};'.format(self.id, self.id )
+                #grafo += '\nempleado{} -> id{};'.format(self.id, self.id )
                 grafo += '\nempleado{}-> nombre{};'.format(self.id, self.id)
                 grafo += '\nempleado{}-> puesto{};'.format(self.id, self.id)
                 grafo += '\nempleado{} -> salario{};'.format(self.id, self.id)
@@ -130,4 +137,4 @@ class Empleado:
         with open(dot, 'w') as f:
             f.write(grafo)
         result = "{}.png".format('empleados')
-        os.system("dot -Tpng " + dot + " -o " + result) 
+        os.system("dot -Tpng " + dot + " -o " + result)
