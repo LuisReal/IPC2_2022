@@ -141,7 +141,7 @@ class Empleado:
 
         # ---- luego de crear el contenido del Dot, procedemos a colocarlo en un archivo
         dot = "{}_dot.txt".format('empleados')
-        with open(dot, 'w') as f:
+        with open(dot, 'w', encoding = "utf-8") as f:
             f.write(grafo)
         result = "{}.png".format('empleados')
         os.system("dot -Tpng " + dot + " -o " + result)
