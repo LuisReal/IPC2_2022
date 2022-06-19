@@ -29,7 +29,7 @@ class Empleado:
             print("\n                El empleado no existe")
 
     def modificarEmpleado(self, idBuscado):
-        
+        existe = False
         
         for departamento in self.root.findall('./departamento'):
 
@@ -38,6 +38,7 @@ class Empleado:
                 self.id = int(empleado.get('id'))
 
                 if idBuscado == self.id:
+                    existe == True
                     nombre = input("Ingrese nuevo nombre: ")
                     empleado.find('nombre').text = nombre
 
@@ -47,9 +48,13 @@ class Empleado:
                     salario = input("Ingrese nuevo salario: ")
                     empleado.find('salario').text = salario
 
+        if existe == False:
+            print("No existe el id buscado")
+
         #self.arbol.write('empleados.xml')
 
     def eliminarEmpleado(self, idBuscado):
+        existe = False
         
         for departamento in self.root.findall('./departamento'):
 
@@ -58,9 +63,11 @@ class Empleado:
                 self.id = int(empleado.get('id'))
 
                 if idBuscado == self.id:
-                    
+                    existe == True
                     departamento.remove(empleado)
-        
+                
+        if existe == False:
+            print("No existe el id buscado")
         #self.arbol.write('empleados.xml')
 
     def verTodo(self):

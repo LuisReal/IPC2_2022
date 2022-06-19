@@ -32,10 +32,13 @@ class Disco:
 
     def modificarDisco(self, titulo_Buscado):
 
+        existe = False
+
         for elemento in self.root.findall('./cd'):
             titulo = elemento.find('./title').text
 
             if titulo == titulo_Buscado:
+                existe == True
                 artista = input("Ingrese nuevo artista: ")
                 pais = input("Ingrese nuevo pais: ")
                 compania = input("Ingrese nueva compania: ")
@@ -47,18 +50,25 @@ class Disco:
                 elemento.find('./company').text = compania
                 elemento.find('./price').text = precio
                 elemento.find('./year').text = year
+
+        if existe == False:
+            print("No existe el titulo buscado")
         
         #self.arbol.write('discos.xml')
     
     def eliminarDisco(self, titulo_buscado):
 
+        existe = False
+
         for elemento in self.root.findall('./cd'):
             titulo = elemento.find('./title').text
 
             if titulo == titulo_buscado:
-                
+                existe = True
                 self.root.remove(elemento)
 
+        if existe == False:
+            print("No existe el titulo buscado")
         #self.arbol.write('discos.xml')
 
     def verTodo(self):
