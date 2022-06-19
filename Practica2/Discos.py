@@ -38,7 +38,7 @@ class Disco:
             titulo = elemento.find('./title').text
 
             if titulo == titulo_Buscado:
-                existe == True
+                existe = True
                 artista = input("Ingrese nuevo artista: ")
                 pais = input("Ingrese nuevo pais: ")
                 compania = input("Ingrese nueva compania: ")
