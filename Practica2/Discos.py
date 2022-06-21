@@ -1,5 +1,4 @@
-from cgi import print_exception
-from this import s
+
 import os
 
 class Disco:
