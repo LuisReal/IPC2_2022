@@ -1,0 +1,77 @@
+{% load static %}
+<html>
+<head>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        img{
+            margin-top: 40px;
+            margin-left: 30px;
+        }
+        .estilo{
+            display: flex;
+            position: relative;
+            margin: 200 auto;
+            background-color: white;
+            border-color: blue;
+            width: 450px;
+            height: 200px;
+            
+        }
+
+        .imagen{
+            margin-top: 50px;
+            margin-left: 50px;
+            background: yellow;
+            width: 100px;
+            height: 100px;
+        }
+
+        #nombre{
+            
+            margin-top: 50px;
+            margin-left: 10px;
+            font-family: "Lucida Console", "Courier New", monospace;
+            text-align: center;
+            line-height: 50px;
+            border: solid;
+            height: 50px;
+            color: orange;
+            border-top-color: green; 
+            border-bottom-color: green; 
+            border-right: none;
+            border-left: none;
+            border-width: 2px;
+            
+            
+        }
+
+        #carnet{
+            margin-top:120px;
+            margin-left: -250px;
+            height: 50px;
+            color: orange;
+            text-align:center;
+            
+        }
+
+        marquee{
+            margin-top:10px;
+            margin-left: -10px;
+            margin-right: -10px;
+            background-color: #f0ffff;
+        }
+    </style>
+</head>
+<body>
+    <marquee>Hoja de trabajo 2</marquee>
+    <div class="estilo" >
+            
+            <img src="{% static 'FOTO.jpg' %}" width="90" height="100">
+            <p id="nombre">LUIS FERNANDO GONZALEZ REAL</p>
+            <p id="carnet">201313965</p>
+        
+    </div>
+</body>
+</html>
