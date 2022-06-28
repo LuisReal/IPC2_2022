@@ -1,0 +1,94 @@
+{% load static %}
+<html>
+<head>
+    <title>Paises</title>
+    <link rel="stylesheet" type="text/css" href={% static 'estilos.css'%} /> 
+    
+</head>
+    <body >
+        
+        <marquee>DESKTOP RECORDS</marquee>
+
+        <form method= "POST" >
+            {% csrf_token %}
+            <div id="header">
+                <ul class="nav">
+                    <li> 
+                    
+                        <input type="submit" name="ver" value="Ver Paises">
+                                
+                    </li>
+                    <li><input type="submit" name="buscar" value="Buscar">
+                        <ul>
+                                
+                            <li><input type="submit" name="moneda" value="Moneda"></li>
+                            <li><input type="submit" name="idioma" value="Idioma"></li>
+                            <li><input type="submit" name="continente" value="Continente"></li>
+                        </ul>
+                    </li>
+                    <li><input type="submit" name="" value="Agregar"></li>
+                    <li><input type="submit" name="" value="Modificar"></li>
+                    <li><input type="submit" name="" value="Eliminar"></li>
+                    <li><input type="submit" name="" value="Reporte paises"></li>
+                    <li id="discos">
+                        <a href="http://localhost:8000/">
+                            <input type="button" name="" value="Home">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="datos">
+                <h3>Paises</h3>
+                <textarea>
+        
+                    {% for departamento in data.empresa.departamento%}
+                        Departamento: {{departamento.departamento}}
+                        {% for empleado in departamento.empleado %} 
+                            id: {{ empleado.id }} 
+                            Nombre: {{ empleado.nombre }}
+                            Puesto: {{empleado.puesto}}
+                            Salario: {{empleado.salario}}
+                        {% endfor %}
+                    
+                    {% endfor %}
+                </textarea>
+            </div>
+
+            <div id="busqueda">
+                <h3>Busqueda de paises</h3>
+                <input type="text" name="texto">
+
+                <table>
+                    <tr>
+                        <th>Moneda</th>
+
+                        <th>Idioma</th>
+
+                        <th>Continente</th>
+                    </tr>
+
+                        {% for departamento in datos.empresa.departamento %}
+                            {% for empleado in departamento.empleado %} 
+                                    
+                                <tr>
+                                            
+                                    <td>{{empleado.nombre}}</td>
+
+                                    <td>{{empleado.puesto}}</td>
+
+                                    <td>{{empleado.salario}}</td>
+                                            
+                                    <td>{{departamento.departamento}}</td>
+                                </tr>
+                                    
+                            {% endfor %}
+                        {% endfor %}
+                            
+                </table>
+            </div>
+
+        </form>
+
+    </body>
+</html>

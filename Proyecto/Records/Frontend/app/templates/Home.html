@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href={% static 'estilos.css'%} /> 
+
+</head>
+    <body >
+        
+        <marquee>DESKTOP RECORDS</marquee>
+        <!--Usar input para que se sepa que boton se esta presionando, (NOTA: no usar etiqueta button)-->
+
+        <form method == "POST">
+            {% csrf_token %}
+            <div id="botones">
+                <a href="http://localhost:8000/empleados/">
+                    <input type="button" name="empleados" value="empleados">
+                </a>
+                <a href="http://localhost:8000/discos/">
+                    <input type="button" name="discos" value="discos">
+                </a>
+                <a href="http://localhost:8000/paises/">
+                    <input type="button" name="paises" value="paises">
+                </a>
+            </div>
+
+            
+        </form>
+    
+    </body>
+
+</html>

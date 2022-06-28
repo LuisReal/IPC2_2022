@@ -1,0 +1,91 @@
+{% load static %}
+<html>
+<head>
+    <title>Discos</title>
+    <link rel="stylesheet" type="text/css" href={% static 'estilos.css'%} /> 
+    
+</head>
+    <body >
+        
+        <marquee>DESKTOP RECORDS</marquee>
+
+        <form method= "POST" >
+            {% csrf_token %}
+            <div id="header">
+                <ul class="nav">
+                    <li> 
+                    
+                        <input type="submit" name="ver" value="Ver Discos">
+                                
+                    </li>
+                    <li><input type="submit" name="buscar" value="Buscar">
+                        <ul>
+                                
+                            <li><input type="submit" name="titulo" value="Titulo"></li>
+                            <li><input type="submit" name="year" value="Year"></li>
+                            <li><input type="submit" name="artista" value="Artista"></li>
+                        </ul>
+                    </li>
+                    <li><input type="submit" name="" value="Agregar"></li>
+                    <li><input type="submit" name="" value="Modificar"></li>
+                    <li><input type="submit" name="" value="Eliminar"></li>
+                    <li><input type="submit" name="" value="Reporte discos"></li>
+                    <li id="discos">
+                        <a href="http://localhost:8000/">
+                            <input type="button" name="" value="Home">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="datos">
+                <h3>Discos</h3>
+                <textarea>
+        
+                    {% for cd in data.catalog.cd%}
+                        Title: {{cd.title}}
+                        Artist: {{cd.artist}}
+                        Company: {{cd.company}} 
+                        Country: {{cd.country}}
+                        Price: {{cd.price}}
+                        Year: {{cd.year}}
+                        
+                    {% endfor %}
+                </textarea>
+            </div>
+
+            <div id="busqueda">
+                <h3>Busqueda de discos</h3>
+                <input type="text" name="texto">
+
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Company</th>
+                        <th>Country</th>
+                        <th>Price</th>
+                        <th>Year</th>
+                    </tr>
+
+                        {% for cd in datos.catalog.cd %}
+    
+                            <tr>    
+                                <td>{{cd.title}}</td>
+                                <td>{{cd.artist}}</td>
+                                <td>{{cd.company}}</td>
+                                <td>{{cd.country}}</td>
+                                <td>{{cd.price}}</td>
+                                <td>{{cd.year}}</td>
+                            </tr>
+                                    
+                        {% endfor %}
+                            
+                </table>
+            </div>
+
+
+        </form>
+
+    </body>
+</html>

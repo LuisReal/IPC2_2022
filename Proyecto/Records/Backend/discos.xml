@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding = "utf-8" ?>
+<catalog>
+    <cd>
+        <title>empire burlesque</title>
+        <artist>bob dylan</artist>
+        <country>usa</country>
+        <company>columbia</company>
+        <price>10.90</price>
+        <year>1985</year>
+    </cd>
+    <cd>
+        <title>greatest hits</title>
+        <artist>dolly parton</artist>
+        <country>usa</country>
+        <company>rca</company>
+        <price>9.90</price>
+        <year>1982</year>
+    </cd>
+    <cd>
+        <title>empire burlesque</title>
+        <artist>bee gees</artist>
+        <country>uk</country>
+        <company>polydor</company>
+        <price>10.90</price>
+        <year>1998</year>
+    </cd>
+</catalog>
