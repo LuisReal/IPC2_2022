@@ -5,6 +5,10 @@
 
 }
 
+html{
+    background-color: #EAFAF1 ;
+}
+
 
 marquee{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -20,9 +24,10 @@ marquee{
 
 #header{
     background-color: #82E0AA;
-    margin-left: -10px;
-    margin-right: -10px;
-    
+}
+
+#headerEmpleados{
+    background-color: #CACFD2;
 }
 
 ul, ol {
@@ -38,7 +43,7 @@ ul, ol {
 }
 
 .nav li input {
-    background-color: #82E0AA;
+    background-color: #D5F5E3;
     border: none;
     font-weight: bold;
     color: black;
@@ -72,21 +77,33 @@ ul, ol {
     
 }
 
-
-
 .nav li:hover > ul {
     display:block;
 }
 
+#home{
+    margin-left: 200px;
+}
+
+#home a {
+    
+    text-decoration: none;
+}
 
 #datos{
     margin-top: 20px;
-    margin-left: 200px;
+    margin-left: 50px;
+    height: 100px;
     width: 400px;
     float: left;
-    margin-left: 50px;
     color: blue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#datos textarea{
+    padding-left: -10px;
+    height: 400px;
+    width: 400px;
 }
 
 #busqueda{
@@ -100,12 +117,10 @@ ul, ol {
 #busqueda table{
     margin-top: 20px;
     width: 400px;
-    border: 1px solid #000;
-    
 }
 
 #busqueda table tr{
-    border: 1px solid black;
+    
     border-collapse: collapse;
 }
 
@@ -118,10 +133,35 @@ ul, ol {
 }
 
 #busqueda table tr td{
-    border: 1px solid black;
+    
     padding: 5px;
 }
 
+#eliminar{
+   
+    color: blue;
+    margin-top: 20px;
+    margin-left: 70px;
+    float: left;
+    
+}
+
+#eliminar input{
+    margin-top: 5px;
+    border: 1px solid black;
+    height: 25px;
+    display: block;
+    padding-left: 10px;
+}
+
+#eliminar h3{
+    margin-top: 25px;
+}
+
+#eliminar label{
+    color: #434343;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 #cargar{
     margin-left: 400px;
@@ -133,30 +173,19 @@ ul, ol {
     margin-top: 20px;
 }
 
-#discos{
-    margin-left: 200px;
-}
 
-
-textarea{
-    width: 400px;
-    height: 350px;
-}
-
-p{
-    border: solid;
-    border-color: #434343;
-    height: 30px;
-}
 
 
 #botones{
-    margin-top: 50px;
-    margin-left: -5px;
-    width: 1400px;
-    height: 200px;
+    background-image:url(coding.jpg);
+    background-size: 550px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    margin-top: 130px;
+    margin-left: 400px;
     border: 1px solid black;
-    background-color: #82E0AA;
+    width: 200px;
+    height: 250px;
     padding-left: 350px;
     padding-top: 0px;
     float: left;
@@ -164,10 +193,13 @@ p{
 }
 
 #botones input{
-    margin-left: -5px;
-    height: 200px;
+    background-color: #AED6F1 ;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    margin-left: -15px;
+    height: 50px;
     width: 200px;
-    padding: 5px;
+    padding: 10px;
     font-weight: bold;
     border: none;
 }
@@ -180,5 +212,84 @@ p{
     background-color:blue ;
 }
 
+.input-wrapper {
+    margin-top: 15px;
+    margin-left: 20px;
+    position: relative;
+    
+}
+  
+.input {
+    box-sizing: border-box;
+    color: #191919;
+    text-align: center;
+   
+}
 
+.home-wrapper {
+    margin-top: 15px;
+    margin-left: -150px;
+    position: relative;
+    
+}
 
+.home-icon {
+    color: #191919;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+
+  
+/*padding: 15px 15px 15px 35px;*/
+.input-icon {
+    color: #191919;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+p {
+    color: white;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+    margin-top: 300px;
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+#footer{
+    background-color: #5D6D7E ;
+    width: 1400px;
+    height: 100px;
+}
+
+#icono{
+    position:relative;
+    background-image: url(login.jpg);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid black;
+    margin-top: -15px;
+    margin-left: 600px;
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+}

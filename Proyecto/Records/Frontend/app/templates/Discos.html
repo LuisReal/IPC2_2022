@@ -2,7 +2,10 @@
 <html>
 <head>
     <title>Discos</title>
-    <link rel="stylesheet" type="text/css" href={% static 'estilos.css'%} /> 
+    <link rel="stylesheet" type="text/css" href={% static 'estilos.css'%} />
+    <link rel="stylesheet" type="text/css" href={% static 'bootstrap/css/bootstrap.min.css'%} /> 
+    <script type="text/javascript" src={% static "bootstrap/js/bootstrap.min.js" %}></script>
+    <script type="text/javascript" src={% static "bootstrap/js/jquery-3.6.0.min.js"%}></script>
     
 </head>
     <body >
@@ -13,24 +16,22 @@
             {% csrf_token %}
             <div id="header">
                 <ul class="nav">
-                    <li> 
-                    
-                        <input type="submit" name="ver" value="Ver Discos">
-                                
-                    </li>
+                    <li><input type="submit" name="ver" value="Ver Discos"></li>
                     <li><input type="submit" name="buscar" value="Buscar">
-                        <ul>
-                                
+                        <ul>   
                             <li><input type="submit" name="titulo" value="Titulo"></li>
                             <li><input type="submit" name="year" value="Year"></li>
                             <li><input type="submit" name="artista" value="Artista"></li>
                         </ul>
                     </li>
-                    <li><input type="submit" name="" value="Agregar"></li>
-                    <li><input type="submit" name="" value="Modificar"></li>
-                    <li><input type="submit" name="" value="Eliminar"></li>
-                    <li><input type="submit" name="" value="Reporte discos"></li>
-                    <li id="discos">
+                    
+                    <li><input type="submit" name="modificar" value="Modificar"></li>
+                    <li><input type="submit" name="eliminado" value="Eliminar"></li>
+                    <li>
+                        
+                        <input type="submit" name="reporte" value="Reporte discos"></li>
+                        
+                    <li id="home">
                         <a href="http://localhost:8000/">
                             <input type="button" name="" value="Home">
                         </a>
@@ -82,6 +83,51 @@
                         {% endfor %}
                             
                 </table>
+            </div>
+
+            <div id="eliminar">
+                <h3>Eliminar Disco</h3>
+                <input type="text" name="elim" placeholder="Introduzca titulo">
+
+                <h3>Modificar Discos</h3>
+                <label>titulo</label>
+                <div class="input-wrapper">
+                    <input type="text" name="titulo1" class="input">
+                    <img  class="input-icon" src="{% static 'discos.png' %}"  width="20" height="20">
+                </div>
+
+
+                <label>artista</label>
+                <div class="input-wrapper">
+                    <input type="text" name="artista1" class="input">
+                    <img  class="input-icon" src="{% static 'cantante.png' %}"  width="20" height="20">
+                </div>
+
+                <label>pais</label>
+                <div class="input-wrapper">
+                    <input type="text" name="pais1" class="input">
+                    <img  class="input-icon" src="{% static 'pais.png' %}"  width="20" height="20">
+                </div>
+
+                <label>compania</label>
+                <div class="input-wrapper">
+                    <input type="text" name="compania1" class="input">
+                    <img  class="input-icon" src="{% static 'company.png' %}"  width="20" height="20">
+                </div>
+
+                <label>precio</label>
+                <div class="input-wrapper">
+                    <input type="text" name="precio1" class="input">
+                    <img  class="input-icon" src="{% static 'salario.png' %}"  width="20" height="20">
+                </div>
+
+                <label>año</label>
+
+                <div class="input-wrapper">
+                    <input type="text" name="anio1" class="input">
+                    <img  class="input-icon" src="{% static 'calendario.png' %}"  width="20" height="20">
+                </div>
+
             </div>
 
 

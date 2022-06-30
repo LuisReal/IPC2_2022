@@ -10,23 +10,45 @@
         <marquee>DESKTOP RECORDS</marquee>
         <!--Usar input para que se sepa que boton se esta presionando, (NOTA: no usar etiqueta button)-->
 
-        <form method == "POST">
+        <form method = "POST">
             {% csrf_token %}
             <div id="botones">
+                
                 <a href="http://localhost:8000/empleados/">
-                    <input type="button" name="empleados" value="empleados">
+
+                    <div class="home-wrapper">
+                        <input type="button" name="empleados" value="empleados" >
+                        <img  class="home-icon" src="{% static 'empleados.png' %}"  width="20" height="20">
+                    </div>
+                    
                 </a>
+                
                 <a href="http://localhost:8000/discos/">
-                    <input type="button" name="discos" value="discos">
+                    <div class="home-wrapper">
+                        <input type="button" name="discos" value="discos" >
+                        <img  class="home-icon" src="{% static 'discos.png' %}"  width="20" height="20">
+                    </div>
+                    
                 </a>
-                <a href="http://localhost:8000/paises/">
-                    <input type="button" name="paises" value="paises">
+                
+                <a href="http://localhost:8000/paises/" >
+                    <div class="home-wrapper">
+                        <input type="button" name="discos" value="paises" >
+                        <img  class="home-icon" src="{% static 'pais.png' %}"  width="20" height="20">
+                    </div>
+                    
                 </a>
             </div>
-
-            
         </form>
-    
+        <div id="icono">
+        </div>
+
+        <div id="footer">
+            <p>Luis Fernando Gonzalez Real 201313965<br>
+            Jhonatan Josue Paredes Ochoa 201807200<br>
+            María Luisa Fernanda Calderón Molina 201602458<br>
+            </p>
+        </div>
     </body>
 
 </html>

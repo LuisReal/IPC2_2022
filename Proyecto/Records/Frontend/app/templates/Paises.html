@@ -2,7 +2,10 @@
 <html>
 <head>
     <title>Paises</title>
-    <link rel="stylesheet" type="text/css" href={% static 'estilos.css'%} /> 
+    <link rel="stylesheet" type="text/css" href={% static 'estilos.css'%} />
+    <link rel="stylesheet" type="text/css" href={% static 'bootstrap/css/bootstrap.min.css'%} /> 
+    <script type="text/javascript" src={% static "bootstrap/js/bootstrap.min.js" %}></script>
+    <script type="text/javascript" src={% static "bootstrap/js/jquery-3.6.0.min.js"%}></script>
     
 </head>
     <body >
@@ -26,11 +29,9 @@
                             <li><input type="submit" name="continente" value="Continente"></li>
                         </ul>
                     </li>
-                    <li><input type="submit" name="" value="Agregar"></li>
-                    <li><input type="submit" name="" value="Modificar"></li>
-                    <li><input type="submit" name="" value="Eliminar"></li>
-                    <li><input type="submit" name="" value="Reporte paises"></li>
-                    <li id="discos">
+                    
+                    <li><input type="submit" name="reporte" value="Reporte paises"></li>
+                    <li id="home">
                         <a href="http://localhost:8000/">
                             <input type="button" name="" value="Home">
                         </a>
@@ -42,44 +43,50 @@
                 <h3>Paises</h3>
                 <textarea>
         
-                    {% for departamento in data.empresa.departamento%}
-                        Departamento: {{departamento.departamento}}
-                        {% for empleado in departamento.empleado %} 
-                            id: {{ empleado.id }} 
-                            Nombre: {{ empleado.nombre }}
-                            Puesto: {{empleado.puesto}}
-                            Salario: {{empleado.salario}}
-                        {% endfor %}
-                    
+                {% for continente in data.mundo.continente%}
+                    Continente: {{continente.continente}}
+                        
+                    {% for paises in continente.pais %} 
+                        Nombre: {{paises.nombre  }} 
+                        Capital: {{paises.capital }}
+                        Idioma: {{paises.idioma }}
+                        Moneda: {{paises.moneda}}
                     {% endfor %}
+                    
+                {% endfor %}
                 </textarea>
             </div>
 
             <div id="busqueda">
                 <h3>Busqueda de paises</h3>
-                <input type="text" name="texto">
+                <div class="input-wrapper">
+                    <input type="text" name="paises" class="input" placeholder="Ingrese dato">
+                    <img  class="input-icon" src="{% static 'pais.png' %}"  width="20" height="20">
+                </div>
+                
 
                 <table>
                     <tr>
-                        <th>Moneda</th>
-
+                        <th>Pais</th>
+                        <th>Capital</th>
                         <th>Idioma</th>
-
                         <th>Continente</th>
+                        
                     </tr>
 
-                        {% for departamento in datos.empresa.departamento %}
-                            {% for empleado in departamento.empleado %} 
+                        {% for continente in datos.mundo.continente %}
+
+                            {% for pais in continente.pais %} 
                                     
                                 <tr>
                                             
-                                    <td>{{empleado.nombre}}</td>
+                                    <td>{{pais.nombre}}</td>
 
-                                    <td>{{empleado.puesto}}</td>
+                                    <td>{{pais.capital}}</td>
 
-                                    <td>{{empleado.salario}}</td>
+                                    <td>{{pais.idioma}}</td>
                                             
-                                    <td>{{departamento.departamento}}</td>
+                                    <td>{{continente.continente}}</td>
                                 </tr>
                                     
                             {% endfor %}
@@ -87,6 +94,7 @@
                             
                 </table>
             </div>
+
 
         </form>
 

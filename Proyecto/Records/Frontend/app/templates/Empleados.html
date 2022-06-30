@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href={% static 'bootstrap/css/bootstrap.min.css'%} /> 
     <script type="text/javascript" src={% static "bootstrap/js/bootstrap.min.js" %}></script>
     <script type="text/javascript" src={% static "bootstrap/js/jquery-3.6.0.min.js"%}></script>
+    
 </head>
     <body >
         
@@ -14,26 +15,21 @@
         
         <form method= "POST" >
             {% csrf_token %}
-            <div id="header">
+            <div id="headerEmpleados">
                 <ul class="nav">
-                    <li> 
-                    
-                        <input type="submit" name="ver" value="Ver empleados">
-                                
-                    </li>
+                    <li><input type="submit" name="ver" value="Ver empleados"></li>
                     <li><input type="submit" name="buscar" value="Buscar">
-                        <ul>
-                                
+                        <ul>     
                             <li><input type="submit" name="nombre" value="Nombre"></li>
                             <li><input type="submit" name="departamento" value="Departamento"></li>
                             <li><input type="submit" name="sueldo" value="Sueldo"></li>
                         </ul>
                     </li>
                     <li><input type="submit" name="" value="Agregar"></li>
-                    <li><input type="submit" name="" value="Modificar"></li>
-                    <li><input type="submit" name="" value="Eliminar"></li>
-                    <li><input type="submit" name="" value="Reporte empleados"></li>
-                    <li id="discos">
+                    <li><input type="submit" name="modificar" value="Modificar"></li>
+                    <li><input type="submit" name="eliminar" value="Eliminar"></li>
+                    <li><input type="submit" name="reporteEmpleados" value="Reporte empleados"></li>
+                    <li id="home">
                         <a href="http://localhost:8000/">
                             <input type="button" name="" value="Home">
                         </a>
@@ -91,49 +87,38 @@
                             {% endfor %}
                         {% endfor %}
                             
-                        
-<!--
-                        {% for departamento in data.empresa.departamento%}
-                                
-                                {% for empleado in departamento.empleado %} 
-                                    
-                                    {% if empleado.nombre == result %}
-                                        <tr>
-                                            <td>{{empleado.nombre}}</td>
-
-                                            <td>{{empleado.puesto}}</td>
-
-                                            <td>{{empleado.salario}}</td>
-                                            
-                                            <td>{{departamento.departamento}}</td>
-                                        </tr>
-                                    {% elif departamento.departamento == result %}
-                                        <tr>
-                                            <td>{{empleado.nombre}}</td>
-
-                                            <td>{{empleado.puesto}}</td>
-
-                                            <td>{{empleado.salario}}</td>
-
-                                            <td>{{departamento.departamento}}</td>
-                                        </tr>
-
-                                    {% elif empleado.salario == result %}
-                                        <tr>
-                                            <td>{{empleado.nombre}}</td>
-
-                                            <td>{{empleado.puesto}}</td>
-
-                                            <td>{{empleado.salario}}</td>
-
-                                            <td>{{departamento.departamento}}</td>
-                                        </tr>
-                                    {% endif %}
-                                {% endfor %}
-                            
-                        {% endfor %}
--->
                 </table>
+            </div>
+
+            <div id="eliminar">
+                <h3>Eliminar Empleado</h3>
+                <input type="text" name="elim" placeholder="Introduzca ID">
+                <h3>Modificar Empleado</h3>
+                
+                <label>id</label>
+                <div class="input-wrapper">
+                    <input type="text" name="id" class="input">
+                    <img  class="input-icon" src="{% static 'id.png' %}"  width="20" height="20">
+                </div>
+                
+                <label>nombre</label>
+                <div class="input-wrapper">
+                    <input type="text" name="name" class="input">
+                    <img  class="input-icon" src="{% static 'empleados.png' %}"  width="20" height="20">
+                </div>
+                
+                <label>puesto</label>
+
+                <div class="input-wrapper">
+                    <input type="text" name="puesto" class="input">
+                    <img  class="input-icon" src="{% static 'puesto.png' %}"  width="20" height="20">
+                </div>
+                <label>salario</label>
+            
+                <div class="input-wrapper">
+                    <input type="text" name="salario" class="input">
+                    <img  class="input-icon" src="{% static 'salario.png' %}"  width="20" height="20">
+                </div>
             </div>
 
         </form>

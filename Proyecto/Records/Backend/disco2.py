@@ -17,7 +17,7 @@ def inicio():
     return 'Pantalla de inicio IPC2'
 
 ############################################ eliminar disco
-@app.route('/eliminarEmpleado',methods=["POST"])
+@app.route('/eliminarDisco',methods=["POST"])
 def discoE():
     jsonres=request.get_json()
     print(jsonres)
@@ -53,7 +53,7 @@ def eliminarDisco(titulo, treeD, rootD):
 
 
 ############################################ modificar disco
-@app.route('/modificarEmpleado',methods=["POST"])
+@app.route('/modificarDisco',methods=["POST"])
 def modificarD():
 
     jsonres=request.get_json()

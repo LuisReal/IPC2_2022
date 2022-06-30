@@ -1,0 +1,39 @@
+
+        digraph G {
+            fontname="Helvetica,Arial,sans-serif"
+            node [fontname="Helvetica,Arial,sans-serif"]
+            edge [fontname="Helvetica,Arial,sans-serif"]
+            concentrate=True;
+            rankdir=TB;
+            node [shape=record];
+    
+    n0 [label="Disco"]; 
+nD1 [label="cd"]; 
+n0 -> nD1; 
+nT1 [label="greatest hits"]; 
+nD1 -> nT1; 
+nA1 [label="Artist= dolly parton"]; 
+nD1 -> nA1; 
+nC1 [label="Country= usa"]; 
+nD1 -> nC1; 
+nCO1 [label="Company= rca"]; 
+nD1 -> nCO1; 
+nP1 [label="Price= 9.90"]; 
+nD1 -> nP1; 
+nAN1 [label="Year= 1982"]; 
+nD1 -> nAN1; 
+nD2 [label="cd"]; 
+n0 -> nD2; 
+nT2 [label="empire burlesque"]; 
+nD2 -> nT2; 
+nA2 [label="Artist= bee gees"]; 
+nD2 -> nA2; 
+nC2 [label="Country= uk"]; 
+nD2 -> nC2; 
+nCO2 [label="Company= polydor"]; 
+nD2 -> nCO2; 
+nP2 [label="Price= 10.90"]; 
+nD2 -> nP2; 
+nAN2 [label="Year= 1998"]; 
+nD2 -> nAN2; 
+}
