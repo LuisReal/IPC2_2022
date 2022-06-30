@@ -815,33 +815,26 @@ def mod(title, artist, country, company, price,year, treeD, rootD):
         if (str(elem.tag) == "title"):
             if (str(elem.text)==title):
                 cambio=True
-                if (str(elem.tag) == "artist" and cambio==True):
-                    elem.text=artist
-                    treeD.write("discos.xml")
-            
-                if (str(elem.tag) == "country" and cambio==True):
-                    elem.text=country
-                    treeD.write("discos.xml")
-
-                if (str(elem.tag) == "company" and cambio==True):
-                    elem.text=company
-                    treeD.write("discos.xml")
-
-                if (str(elem.tag) == "price" and cambio==True):
-                    elem.text=price
-                    treeD.write("discos.xml")
-
-                if (str(elem.tag) == "year" and cambio==True):
-                    elem.text=year
-                    treeD.write("discos.xml")
             else:
                 cambio=False
 
-            
+        if (str(elem.tag) == "artist" and cambio==True):
+            elem.text=artist
+        
+        if (str(elem.tag) == "country" and cambio==True):
+            elem.text=country
+
+        if (str(elem.tag) == "company" and cambio==True):
+            elem.text=company
+
+        if (str(elem.tag) == "price" and cambio==True):
+            elem.text=price
+
+        if (str(elem.tag) == "year" and cambio==True):
+            elem.text=year
             
 
-        #treeD.write("discos.xml")
-
+    treeD.write("discos.xml")
 
 
 @app.route('/reporteDiscos')

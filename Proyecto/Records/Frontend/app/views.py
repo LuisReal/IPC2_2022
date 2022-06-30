@@ -104,9 +104,9 @@ def discos(request):
         data = sendDiscos()
         titulo = request.POST.get('titulo1')
         artista = request.POST.get('artista1')
-        pais = request.POST.get('pais')
-        compania = request.POST.get('compania')
-        precio = request.POST.get('precio')
+        pais = request.POST.get('pais1')
+        compania = request.POST.get('compania1')
+        precio = request.POST.get('precio1')
         anio = request.POST.get('anio1')
 
         obj_json = {"title": titulo, "artist":artista, "country":pais, "company":compania, "price":precio, "year":anio }
